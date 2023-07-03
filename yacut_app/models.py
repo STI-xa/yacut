@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from .__init__ import db
+from . import db
 
 
 class URLMap(db.Model):

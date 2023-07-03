@@ -4,7 +4,7 @@ from http import HTTPStatus
 from flask import jsonify, request
 # from urllib.parse import urlparse
 
-from .__init__ import app, db
+from . import app, db
 from .constants import LINK_REG, URL_MAX_LENGTH
 from .error_handlers import InvalidAPIUsage
 from .models import URLMap
