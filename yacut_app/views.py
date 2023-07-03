@@ -3,7 +3,7 @@ import string
 
 from flask import flash, redirect, render_template
 
-from . import app, db
+from .__init__ import app, db
 from .constants import URL_MAX_LENGTH
 from .forms import URLForm
 from .models import URLMap
