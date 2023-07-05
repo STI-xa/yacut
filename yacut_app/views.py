@@ -11,7 +11,8 @@ from .models import URLMap
 
 def get_unique_short_id():
     while True:
-        short_id = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
+        short_id = ''.join(random.choices(
+            string.ascii_letters + string.digits, k=6))
         if not db.session.query(db.exists().where(URLMap.short == short_id)).scalar():
             return short_id
 
@@ -40,7 +41,7 @@ def index_view():
     db.session.add(url_map)
     db.session.commit()
 
-    return render_template('index.html', form=form, short=short_url)
+    return render_template('index.html', form=form, short=url_map)
 
 
 @app.route('/<string:short>')
