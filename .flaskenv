@@ -1,1 +1,1 @@
-FLASK_APP=yacut_app
+FLASK_APP=yacut
