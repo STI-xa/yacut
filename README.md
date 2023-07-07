@@ -27,6 +27,14 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+* Создать в корневой директории файл .env со следующими переменными:
+```
+FLASK_APP=yacut
+FLASK_ENV=development или production
+DATABASE_URI=sqlite:///db.sqlite3
+SECRET_KEY=<ваш_секретный_ключ>
+```
+
 * Запустить приложение:
 ```
 flask run
