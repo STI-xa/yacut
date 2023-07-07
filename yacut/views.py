@@ -1,20 +1,10 @@
-import random
-import string
-
 from flask import flash, redirect, render_template
 
 from . import app, db
 from .constants import URL_MAX_LENGTH
 from .forms import URLForm
 from .models import URLMap
-
-
-def get_unique_short_id():
-    while True:
-        short_id = ''.join(random.choices(
-            string.ascii_letters + string.digits, k=6))
-        if not db.session.query(db.exists().where(URLMap.short == short_id)).scalar():
-            return short_id
+from .utils import get_unique_short_id
 
 
 @app.route('/', methods=['GET', 'POST'])

@@ -2,13 +2,14 @@ import re
 from http import HTTPStatus
 
 from flask import jsonify, request
-# from urllib.parse import urlparse
 
 from . import app, db
 from .constants import LINK_REG, URL_MAX_LENGTH
 from .error_handlers import InvalidAPIUsage
 from .models import URLMap
 from .views import get_unique_short_id
+
+# from urllib.parse import urlparse
 
 
 @app.route('/api/id/<string:short_id>/', methods=['GET'])
